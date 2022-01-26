@@ -5,12 +5,13 @@ import { Link } from 'react-router-dom';
 
 import logo from '../../assets/logo.png';
 import image from '../../assets/me.jpeg';
+
 const SideBar = () => {
 
     return (
 
-        <div class="flex flex-col bg-[#001529] w-fit min-w-[250px] h-screen
-        absolute sm:px-0 px -1 w-1/6
+        <div class="flex flex-col bg-[#001529] h-screen
+        w-[18%]
         ">
             
             <div class="flex flex-col justify-end w-[90%] mx-auto space-x-3 py-2">
@@ -26,7 +27,7 @@ const SideBar = () => {
                 <div>
 
                     <div class="w-[100%] h-[50px] font-thin mb-2 mt-2 hover:bg-[#2980b9] flex flex-col items-center justify-center">
-                        <Link to="/take_survey" class="flex flex-row w-[90%] ml-auto mr-auto ">
+                        <Link to="/" class="flex flex-row w-[90%] ml-auto mr-auto ">
                             <HomeIcon class="h-5" />
                             <p class="ml-3"> Home</p>
                         </Link>
@@ -40,7 +41,7 @@ const SideBar = () => {
                     </div>
 
                     <div class="w-[100%] h-[50px] mb-2 mt-2 hover:bg-[#2980b9] flex flex-col items-center justify-center">
-                        <Link to="/take_survey" class="flex flex-row w-[90%] ml-auto mr-auto">
+                        <Link to="/add_survey" class="flex flex-row w-[90%] ml-auto mr-auto">
                             <ViewGridAddIcon class="h-5 font-thin" />
                             <p class="ml-3"> Add Survey</p>
                         </Link>
@@ -48,8 +49,8 @@ const SideBar = () => {
 
                 </div>
 
-                <div class="flex flex-row absolute top-[92%] flex-row w-full h-[8vh] bg-[#2c3e50] items-center">
-                    <img src={image} class="w-16 h-16 rounded-full ml-1" />
+                <div class="flex flex-row absolute top-[92%] flex-row w-[15.2%] h-[8vh] bg-[#2c3e50] items-center">
+                    <img src={image} class="w-[6vh] h-[6vh] rounded-full ml-1" />
                     <div class="flex flex-col ml-4">
                         <h3 class="text-[#bdc3c7] font-semibold">Kamel Gaouaoui</h3>
                         <a class="text-[#bdc3c7] h-5 font-[12px]" href="https://github.com/Scorpion197">View Github</a>
