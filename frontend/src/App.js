@@ -12,29 +12,34 @@ import TakeSurvey from './components/survey/takesurvey/TakeSurvey';
 import AddSurvey from './components/survey/addsurvey/AddSurvey';
 import MobileMenu from './components/mobilemenu/MobileMenu';
 
+import { Provider } from 'react-redux';
+import store from './store/store';
 
 function App() {
   return (
-    <div className="App">
+    
+    <Provider store={store}>
+      <div className="App">
 
-      <Router>
-        <Switch>
+        <Router>
+          <Switch>
 
-          <Route exact path='/'>
-            <Home />
-          </Route>
+            <Route exact path='/'>
+              <Home />
+            </Route>
 
-          <Route path="/take_survey">
-            <TakeSurvey />
-          </Route>
+            <Route path="/take_survey">
+              <TakeSurvey />
+            </Route>
 
-          <Route path="/add_survey">
-            <AddSurvey />
-          </Route>
-          
-        </Switch>
-      </Router>
-    </div>
+            <Route path="/add_survey">
+              <AddSurvey />
+            </Route>
+
+          </Switch>
+        </Router>
+      </div>
+    </Provider>
   );
 }
 
