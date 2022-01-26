@@ -5,7 +5,7 @@ import MobileMenu from '../../mobilemenu/MobileMenu';
 
 import { PlusIcon, CheckIcon } from '@heroicons/react/solid';
 
-import { useDispatch, useSelector } from 'react-redux'; 
+import { useDispatch } from 'react-redux'; 
 
 import { addQuestion } from '../../../store/add_questions/question';
 
@@ -16,7 +16,7 @@ const AddSurvey = () => {
     const [showMobileMenu, setMobileMenu] = useState(false);
     const [question, setQuestion] = useState(''); 
     const dispatch = useDispatch();
-    const all = useSelector((state) => state.questions);
+
     const displayMobileMenu = () => {
 
         if (window.innerWidth <= 960)
@@ -30,10 +30,9 @@ const AddSurvey = () => {
         
         e.preventDefault(); 
         dispatch(addQuestion(question));
+        setQuestion('');
     }
 
-    console.log(all);
-    
     useEffect(() => {
 
         displayMobileMenu(); 
@@ -52,7 +51,7 @@ const AddSurvey = () => {
 
             <div class="w-[82%] md:w-[100%] h-full pt-[3vh]">
                 <div class="flex flex-col mt-[5vh] justify-center items-center w-[80%] h-full  m-auto">
-                    <p class="h-1 text-[#001529] text-[4vh] ml-[-5%]">Add Survey</p>
+                    <p class="h-1 text-[#001529] text-[4vh] ml-[-5%]">Add Survey Questions</p>
 
                     <div class="flex flex-row sx:flex-col sx:justify-center sx:items-center mt-[10vh]">
                         <input onChange={evt => setQuestion(evt.target.value)}class="outline-0 border-[1px] mt-[5px] mb-[5px] border-[#2980b9] rounded-[4px] p-2 w-[40vh] mr-3" type="text" placeholder="Write a question" required />
