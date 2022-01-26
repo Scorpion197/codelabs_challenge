@@ -9,7 +9,7 @@ const Home = () => {
 
     const displayMobileMenu = () => {
 
-        if (window.innerWidth <= 707)
+        if (window.innerWidth <= 960)
             setMobileMenu(true);
 
         else 

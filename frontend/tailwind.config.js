@@ -5,6 +5,12 @@ module.exports = {
 
       'display': ['Tahoma'], 
       'body': ['Tahoma'],
+    }, 
+
+    screens: {
+
+      'sx': {'max': '648px'},
+      'sl': {'min': '648px', 'max': '1024px'},
     }
   },
   plugins: [],

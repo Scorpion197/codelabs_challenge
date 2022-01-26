@@ -18,7 +18,7 @@ const SideBar = () => {
 
                 <Link to="/" class=" mb-10 flex flex-row mb-10 ">
                     <img src={logo} class="w-12" /> 
-                    <p class="ml-5 mt-3 font-semibold text-[1.5rem] text-white">Dashboard</p>
+                    <p class="ml-5 mt-3 font-semibold text-[1.5rem] sl:text-[1rem] text-white">Dashboard</p>
                 </Link>
 
             </div>
@@ -49,7 +49,7 @@ const SideBar = () => {
 
                 </div>
 
-                <div class="flex flex-row absolute top-[92%] flex-row w-[15.2%] h-[8vh] bg-[#2c3e50] items-center">
+                <div class="flex flex-row absolute top-[92%] flex-row w-[18%] h-[8vh] bg-[#2c3e50] items-center">
                     <img src={image} class="w-[6vh] h-[6vh] rounded-full ml-1" />
                     <div class="flex flex-col ml-4">
                         <h3 class="text-[#bdc3c7] font-semibold">Kamel Gaouaoui</h3>
