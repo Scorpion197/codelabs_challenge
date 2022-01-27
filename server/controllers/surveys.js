@@ -56,7 +56,7 @@ export const sendSurveyQuestions = (req, res) => {
     } catch(error) {
 
         console.log("Error occured while retrieving data", error);
-        
+
         res.send({
 
             "STATUS": "FAILED"
