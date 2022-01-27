@@ -8,6 +8,14 @@ const initialState = {
         questionContext: '', 
         questionID: 0,
     }],
+
+    answeredQuestions: [{
+
+        questionContext: '', 
+        questionID: 0, 
+        questionAnswer: '',
+
+    }]
 }
 
 const questionReducer = (state = initialState, action) => {
@@ -17,8 +25,10 @@ const questionReducer = (state = initialState, action) => {
         case actionTypes.ADD_QUESTION:
 
             return {
+
                 ...state, 
                 count: state.count + 1,
+
                 questions: [...state.questions, {
 
                     questionContext: action.payload, 
@@ -28,6 +38,23 @@ const questionReducer = (state = initialState, action) => {
             }
 
             break; 
+        
+            case actionTypes.QUESTION_ANSWERED:
+
+                return {
+
+                    ...state, 
+                    count: state.count + 1,
+                    answeredQuestions: [...state.answeredQuestions, {
+
+                        questionContext: action.payload.questionContext,
+                        questionID: action.payload.questionID,
+                        questionAnswer: action.payload.questionAnswer,
+
+                    }]
+                }
+                
+                break;
 
         default:
             

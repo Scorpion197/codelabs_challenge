@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import SideBar from '../../sidebar/SideBar';
 import MobileMenu from '../../mobilemenu/MobileMenu';

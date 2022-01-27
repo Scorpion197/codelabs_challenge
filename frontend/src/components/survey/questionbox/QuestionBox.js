@@ -1,15 +1,22 @@
 import { useState } from 'react';
+
+import { questionAnswered } from '../../../store/add_questions/question';
+
+import { useDispatch } from 'react-redux';
+
 const QuestionBox = (props) => {
 
     const emptyQuestion = props.questionID === 0;
     const [done, setDone] = useState(false);
     const [yesChecked, setYesChecked] = useState(false);
     const [noChecked, setNoChecked] = useState(false);
+    const dispatch = useDispatch();
 
     const handleYesClick = () => {
 
         setDone(true);
         setYesChecked(true);
+        
     }
 
     const handleNoClick = () => {

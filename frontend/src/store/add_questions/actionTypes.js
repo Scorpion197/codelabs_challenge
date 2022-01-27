@@ -1,2 +1,2 @@
 export const ADD_QUESTION = "ADD_QUESTION";
-
+export const QUESTION_ANSWERED = "QUESTION_ANSWERED";
