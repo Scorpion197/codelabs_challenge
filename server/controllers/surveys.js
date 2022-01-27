@@ -8,7 +8,6 @@ export const createSurvey = (req, res) => {
 
     try {
 
-        console.log("We are creating a survey");
         //for testing only 
         const data = fs.readFileSync(path.resolve('surveys.json')) ;
         const fileData = JSON.parse(data);
@@ -39,4 +38,29 @@ export const createSurvey = (req, res) => {
         console.log("Error occured while creating survey: ", error);
 
     }
+}
+
+export const sendSurveyQuestions = (req, res) => {
+
+    try {
+
+        const rawData = fs.readFileSync(path.resolve('surveys.json'));
+        const parsedData = JSON.parse(rawData); 
+
+        res.send({
+
+            "STATUS": "SUCCESS", 
+            "data": JSON.stringify(parsedData)
+        });
+        
+    } catch(error) {
+
+        console.log("Error occured while retrieving data", error);
+        
+        res.send({
+
+            "STATUS": "FAILED"
+        })
+    }
+
 }
