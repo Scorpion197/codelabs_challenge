@@ -36,7 +36,7 @@ const AddSurvey = () => {
     const handleFinishClick = (e) => {
 
         e.preventDefault();
-        localStorage.setItem("questions", JSON.stringify(addedQuestions));
+        localStorage.setItem("questions",addedQuestions);
 
     }
 

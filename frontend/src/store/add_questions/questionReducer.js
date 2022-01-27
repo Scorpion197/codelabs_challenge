@@ -3,7 +3,11 @@ import * as actionTypes from './actionTypes';
 const initialState = {
 
     count:0,
-    questions: [],
+    questions: [{
+
+        questionContext: '', 
+        questionID: 0,
+    }],
 }
 
 const questionReducer = (state = initialState, action) => {
@@ -15,7 +19,12 @@ const questionReducer = (state = initialState, action) => {
             return {
                 ...state, 
                 count: state.count + 1,
-                questions: [...state.questions, action.payload]
+                questions: [...state.questions, {
+
+                    questionContext: action.payload, 
+                    questionID: state.count + 1,
+                }]
+
             }
 
             break; 
