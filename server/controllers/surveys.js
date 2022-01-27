@@ -50,7 +50,7 @@ export const sendSurveyQuestions = (req, res) => {
         res.send({
 
             "STATUS": "SUCCESS", 
-            "data": JSON.stringify(parsedData)
+            "data": parsedData,
         });
         
     } catch(error) {
