@@ -12,6 +12,7 @@ app.use(bodyParser.urlencoded({limit: "30mb", extended: true}));
 app.use(cors());
 app.use((req, res ,next) => {
 
+    //security issue, fix later
     res.header("Access-Control-Allow-Origin", "*")
     next()
 })
