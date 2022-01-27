@@ -3,9 +3,6 @@ import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 import questionReducer from './add_questions/questionReducer';
-import surveyReducer from './handle_survey/surveyReducer';
-
-
 
 const store = createStore(questionReducer, composeWithDevTools(applyMiddleware(thunk)));
 

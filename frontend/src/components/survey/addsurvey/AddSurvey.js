@@ -9,6 +9,8 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { addQuestion } from '../../../store/add_questions/question';
 
+import API from '../../../api';
+
 const AddSurvey = () => {
 
     
@@ -33,11 +35,18 @@ const AddSurvey = () => {
         setQuestion('');
     }
 
-    const handleFinishClick = (e) => {
+    const handleFinishClick = async (e) => {
 
         e.preventDefault();
-        localStorage.setItem("questions",addedQuestions);
 
+        try {
+
+            const response = await API.postQuestions(addedQuestions);
+
+        } catch(err) {
+
+            console.log(err);
+        }
     }
 
     useEffect(() => {
