@@ -50,6 +50,7 @@ const TakeSurvey = () => {
         displayMobileMenu(); 
         updateShowQuestions();
         getQuestions();
+        
     }, [allQuestions]);
 
 
