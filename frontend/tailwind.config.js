@@ -11,6 +11,12 @@ module.exports = {
 
       'sx': {'max': '648px'},
       'sl': {'min': '648px', 'max': '1024px'},
+    },
+    extend: {
+      backgroundImage: {
+
+        'home-pattern': "url('/assets/background.jpg')",
+      }
     }
   },
   plugins: [],
