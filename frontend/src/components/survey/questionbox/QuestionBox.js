@@ -16,13 +16,15 @@ const QuestionBox = (props) => {
 
         setDone(true);
         setYesChecked(true);
-        
+        dispatch(questionAnswered(props.questionID, props.questionContext, "Yes"));
     }
 
     const handleNoClick = () => {
 
         setDone(true); 
         setNoChecked(true);
+        dispatch(questionAnswered(props.questionID, props.questionContext, "No"));
+
     }
 
     return (

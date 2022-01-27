@@ -21,7 +21,7 @@ const AddSurvey = () => {
     const answered = useSelector((state) => state.answeredQuestions);
 
     console.log(answered);
-    
+
     const displayMobileMenu = () => {
 
         if (window.innerWidth <= 960)
@@ -46,6 +46,7 @@ const AddSurvey = () => {
 
             const response = await API.postQuestions(addedQuestions);
             localStorage.setItem('questions', addedQuestions);
+            
         } catch(err) {
 
             console.log(err);

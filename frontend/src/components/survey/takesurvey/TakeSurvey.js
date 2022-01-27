@@ -25,12 +25,12 @@ const TakeSurvey = () => {
 
     const updateShowQuestions = () => {
 
-        if (storageContent !== null) 
-            setShowQuestions(true);
+        if (typeof allQuestions === undefined || allQuestions.length < 1) 
+            setShowQuestions(false);
 
 
         else 
-            setShowQuestions(false);
+            setShowQuestions(true);
     }
 
     const getQuestions = async() => {
@@ -39,27 +39,20 @@ const TakeSurvey = () => {
 
             const response = await API.getSurveysQuestion();
             setAllquestions(response.data.questions);
-
+            
         }catch(err) {
 
             console.log("error occured", err);
         }
     }
-
-
     useEffect(() => {
 
         displayMobileMenu(); 
         updateShowQuestions();
         getQuestions();
+    }, [allQuestions]);
 
-    }, []);
 
-   /* useEffect(() => {
-
-        updateShowQuestions();
-    }, [questions]);
-    */
 
     window.addEventListener('resize', displayMobileMenu);
     
