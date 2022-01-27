@@ -25,7 +25,7 @@ const Home = () => {
 
     return (
 
-        <div class="flex flex-row w-screen overflow-hidden bg-[green]">
+        <div class="flex flex-row w-screen overflow-scroll bg-[green]">
 
             {
                 showMobileMenu ? <MobileMenu />: <SideBar />
