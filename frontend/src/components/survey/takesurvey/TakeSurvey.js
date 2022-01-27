@@ -12,7 +12,6 @@ const TakeSurvey = () => {
     const [showMobileMenu, setMobileMenu] = useState(false);
     const [showQuestions, setShowQuestions] = useState(false);
     const [allQuestions, setAllquestions] = useState([]);
-    const storageContent = localStorage.getItem('questions');
 
     const displayMobileMenu = () => {
 

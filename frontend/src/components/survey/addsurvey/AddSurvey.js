@@ -46,9 +46,6 @@ const AddSurvey = () => {
 
             const response = await API.postQuestions(addedQuestions);
 
-            //remove this line of localstorage later
-            localStorage.setItem('questions', addedQuestions);
-
         } catch(err) {
 
             console.log(err);
