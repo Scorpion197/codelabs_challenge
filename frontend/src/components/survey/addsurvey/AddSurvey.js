@@ -62,13 +62,13 @@ const AddSurvey = () => {
 
                     <div class="flex flex-row sx:flex-col sx:justify-center sx:items-center mt-[10vh]">
                         <input onChange={evt => setQuestion(evt.target.value)}class="outline-0 border-[1px] mt-[5px] mb-[5px] border-[#2980b9] rounded-[4px] p-2 w-[40vh] mr-3" type="text" placeholder="Write a question" required />
-                        <button onClick={handleAddClick} class="ml-2 w-[15vh] sx:ml-[-2px] mt-[5px] mb-[5px] flex flex-row items-center text-white  border-0 rounded-[4px] outline-0 bg-[#2980b9]"type="submit">
+                        <button onClick={handleAddClick} class="ml-2 w-[15vh] sx:ml-[-2px] mt-[5px] hover:bg-[#3498db] mb-[5px] flex flex-row items-center text-white  border-0 rounded-[4px] outline-0 bg-[#2980b9]"type="submit">
                             <PlusIcon class="h-5 mr-1 ml-2"/>
                             Add
 
                         </button>
 
-                        <button onClick={handleFinishClick} class="ml-2 w-[15vh] sx:ml-[-2px] mt-[5px] mb-[5px] flex flex-row items-center text-white  border-0 rounded-[4px] outline-0 bg-[#27ae60]"type="submit">
+                        <button onClick={handleFinishClick} class="ml-2 w-[15vh] sx:ml-[-2px] mt-[5px] mb-[5px] flex flex-row items-center text-white  hover:bg-[#2ecc71] border-0 rounded-[4px] outline-0 bg-[#27ae60]"type="submit">
                             <CheckIcon class="h-5 mr-1 ml-2" />
                             Finish
                         </button>
