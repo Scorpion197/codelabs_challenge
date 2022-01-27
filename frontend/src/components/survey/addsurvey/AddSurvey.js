@@ -42,7 +42,7 @@ const AddSurvey = () => {
         try {
 
             const response = await API.postQuestions(addedQuestions);
-
+            localStorage.setItem('questions', addedQuestions);
         } catch(err) {
 
             console.log(err);

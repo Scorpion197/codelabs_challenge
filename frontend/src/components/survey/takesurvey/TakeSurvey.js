@@ -5,14 +5,14 @@ import SideBar from '../../sidebar/SideBar';
 import MobileMenu from '../../mobilemenu/MobileMenu';
 import QuestionBox from '../questionbox/QuestionBox';
 
+import API from '../../../api';
+
 const TakeSurvey = () => {
 
     const [showMobileMenu, setMobileMenu] = useState(false);
     const [showQuestions, setShowQuestions] = useState(false);
-
-    const allQuestions = useSelector((state) => state.questions);
+    const [allQuestions, setAllquestions] = useState([]);
     const storageContent = localStorage.getItem('questions');
-    console.log("allQuestions",allQuestions);
 
     const displayMobileMenu = () => {
 
@@ -33,11 +33,26 @@ const TakeSurvey = () => {
             setShowQuestions(false);
     }
 
+    const getQuestions = async() => {
+
+        try {
+
+            const response = await API.getSurveysQuestion();
+            setAllquestions(response.data.questions);
+
+        }catch(err) {
+
+            console.log("error occured", err);
+        }
+    }
+
 
     useEffect(() => {
 
         displayMobileMenu(); 
         updateShowQuestions();
+        getQuestions();
+
     }, []);
 
    /* useEffect(() => {
@@ -65,7 +80,7 @@ const TakeSurvey = () => {
 
                                 <p class="sx:text-[1rem] text-[#001529] text-[4vh] ml-[-5%] text-bold">Survey Questions</p>
                                 {
-                                    allQuestions.map((question) => (
+                                    allQuestions[0].map((question) => (
                                         
                                         <QuestionBox 
                                             questionID={question.questionID}
