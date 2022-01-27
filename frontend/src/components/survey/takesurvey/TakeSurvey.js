@@ -12,7 +12,7 @@ const TakeSurvey = () => {
 
     const allQuestions = useSelector((state) => state.questions);
     const storageContent = localStorage.getItem('questions');
-    
+    console.log("allQuestions",allQuestions);
 
     const displayMobileMenu = () => {
 

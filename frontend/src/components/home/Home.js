@@ -6,7 +6,7 @@ import MobileMenu from "../mobilemenu/MobileMenu";
 const Home = () => {
 
     const [showMobileMenu, setMobileMenu] = useState(false);
-
+    
     const displayMobileMenu = () => {
 
         if (window.innerWidth <= 960)
@@ -22,10 +22,9 @@ const Home = () => {
     }, [])
 
     window.addEventListener('resize', displayMobileMenu);
-
     return (
 
-        <div class="flex flex-row w-screen overflow-scroll bg-[green]">
+        <div class="flex flex-row w-screen overflow-hidden bg-[green]">
 
             {
                 showMobileMenu ? <MobileMenu />: <SideBar />
