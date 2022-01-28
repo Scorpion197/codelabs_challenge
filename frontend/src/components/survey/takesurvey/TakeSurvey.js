@@ -15,6 +15,15 @@ const TakeSurvey = () => {
     const results = useSelector((state) => state.answeredQuestions);
     const dispatch = useDispatch();
 
+    //for pagination
+    const [currentPage, setCurrentPage] = useState(1); 
+    const [questionsPerPage, setQuestionsPerPage] = useState(4);
+    const indexOfLastQuestion = currentPage * questionsPerPage;
+    const indexOfFirstQuestion = indexOfLastQuestion - questionsPerPage;
+    //const currentQuestions = allQuestions[0].slice(indexOfFirstQuestion, indexOfLastQuestion);
+    const [currentQuestions, setCurrentQuestions] = useState([]);
+
+
     
     const displayMobileMenu = () => {
 
@@ -23,6 +32,13 @@ const TakeSurvey = () => {
 
         else 
             setMobileMenu(false);
+    }
+
+    const updateCurrentQuestions = () => {
+
+        if (typeof allQuestions !== undefined || allQuestions.length > 1)
+
+            setCurrentQuestions(allQuestions.slice(indexOfFirstQuestion, indexOfLastQuestion));
     }
 
 
@@ -71,6 +87,7 @@ const TakeSurvey = () => {
         displayMobileMenu(); 
         updateShowQuestions();
         getQuestions();
+        updateCurrentQuestions();
         
     }, [allQuestions]);
 
