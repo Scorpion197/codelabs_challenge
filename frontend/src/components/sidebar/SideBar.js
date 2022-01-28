@@ -59,8 +59,8 @@ const SideBar = () => {
                 <div class="flex flex-row absolute top-[92%] flex-row w-[18%] h-[8vh] bg-[#2c3e50] items-center">
                     <img src={image} class="w-[6vh] h-[6vh] rounded-full ml-1" />
                     <div class="flex flex-col ml-4">
-                        <h3 class="text-[#bdc3c7] font-semibold sl:text-[14px]">Kamel Gaouaoui</h3>
-                        <a class="text-[#bdc3c7] h-5 font-[12px] sl:text-[12px]" href="https://github.com/Scorpion197">View Github</a>
+                        <h3 class="text-[#bdc3c7] font-semibold sl:text-[12px] sg:text-[14px]">Kamel Gaouaoui</h3>
+                        <a class="text-[#bdc3c7] h-5 font-[12px] sl:text-[10px] sg:text-[14px]" href="https://github.com/Scorpion197">View Github</a>
                         
                     </div>
                 </div>
