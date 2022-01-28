@@ -44,6 +44,21 @@ const API = {
         return response;
 
     },
+
+    fetchSurveyResults: async () => {
+
+        const endpoint = "http://localhost:9001/surveys/survey_results";
+
+        const request = {
+
+            method: 'GET', 
+            headers: {'Content-Type': 'application/json'}
+        };
+
+        const response = await (await fetch(endpoint, request)).json(); 
+
+        return response;
+    },
 }
 
 export default API;

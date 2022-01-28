@@ -83,8 +83,7 @@ const TakeSurvey = () => {
         
     }, [allQuestions]);
 
-    console.log("Current page: ", currentPage);
-
+    
     window.addEventListener('resize', displayMobileMenu);
     
 

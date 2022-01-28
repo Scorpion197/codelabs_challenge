@@ -10,7 +10,6 @@ import {
 import Home from './components/home/Home';
 import TakeSurvey from './components/survey/takesurvey/TakeSurvey';
 import AddSurvey from './components/survey/addsurvey/AddSurvey';
-import MobileMenu from './components/mobilemenu/MobileMenu';
 import SurveyResults from './components/survey/surveyresults/SurveyResults';
 
 import { Provider } from 'react-redux';
