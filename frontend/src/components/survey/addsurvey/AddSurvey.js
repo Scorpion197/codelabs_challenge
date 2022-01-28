@@ -69,19 +69,16 @@ const AddSurvey = () => {
                 <div class="flex flex-col mt-[5vh] justify-center items-center w-[80%] h-full  m-auto">
                     <p class="h-1 text-[#001529] text-[4vh] ml-[-5%]">Add Survey Questions</p>
 
-                    <div class="flex flex-col items-center sx:flex-col sx:justify-center sx:items-center mt-[10vh]">
+                    <div class="flex flex-row items-center sx:flex-col sx:justify-center sx:items-center mt-[10vh]">
                         <input onChange={evt => setQuestion(evt.target.value)}class="outline-0 border-[1px] mt-[5px] mb-[5px] border-[#2980b9] rounded-[4px] p-2 w-[40vh] mr-3" type="text" placeholder="Write a question" required />
-                        <fieldset class="border-[1px] w-[40vh] h-[15vh] p-[5px] ml-[-3px] rounded-[4px] border-[#2980b9]">
-                            <textarea class="border-0 outline-0 w-[40vh] h-[10vh]"></textarea>
-                            <legend class="text-[#b2bec3]">Description </legend>
-                        </fieldset>
-                        <button onClick={handleAddClick} class="ml-2 w-[15vh] h-[35px] sx:h-[25px] sx:ml-[-2px] mt-[15px] hover:bg-[#3498db] mb-[5px] flex flex-row items-center text-white  border-0 rounded-[4px] outline-0 bg-[#2980b9]"type="submit">
+
+                        <button onClick={handleAddClick} class="ml-2 w-[15vh] h-[35px] sx:h-[25px] mt-[2px] sx:ml-[-2px] hover:bg-[#3498db] mb-[5px] flex flex-row items-center text-white  border-0 rounded-[4px] outline-0 bg-[#2980b9]"type="submit">
                             <PlusIcon class="h-5 mr-1 ml-2"/>
                             Add
 
                         </button>
 
-                        <button onClick={handleFinishClick} class="ml-2 w-[15vh] h-[35px] sx:h-[25px] sx:ml-[-2px] mt-[10px] mb-[5px] flex flex-row items-center text-white  hover:bg-[#2ecc71] border-0 rounded-[4px] outline-0 bg-[#27ae60]"type="submit">
+                        <button onClick={handleFinishClick} class="ml-2 w-[15vh] h-[35px] sx:h-[25px] sx:ml-[-2px] mt-[2px] mb-[5px] flex flex-row items-center text-white  hover:bg-[#2ecc71] border-0 rounded-[4px] outline-0 bg-[#27ae60]"type="submit">
                             <CheckIcon class="h-5 mr-1 ml-2" />
                             Finish
                         </button>
