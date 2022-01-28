@@ -107,7 +107,6 @@ export const exposeSurveyResults = (req, res) => {
 
         const rawData = fs.readFileSync(path.resolve('surveysResult.json'));
         const parsedData = JSON.parse(rawData);
-
         res.send({
 
             "STATUS": "SUCCESS", 
