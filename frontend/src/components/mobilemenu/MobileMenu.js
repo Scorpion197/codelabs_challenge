@@ -1,6 +1,6 @@
 import React, { useState } from 'react'; 
 
-import { HomeIcon, AdjustmentsIcon, ViewGridAddIcon, MenuAlt2Icon, XIcon } from '@heroicons/react/outline';
+import { HomeIcon, AdjustmentsIcon, ViewGridAddIcon, MenuAlt2Icon, XIcon, CollectionIcon } from '@heroicons/react/outline';
 
 import logo from '../../assets/logo.png';
 
@@ -53,6 +53,13 @@ const MobileMenu = () => {
                             <Link to="/add_survey" class="flex flex-row w-[90%] ml-auto mr-auto">
                                 <ViewGridAddIcon class="h-5 font-thin" />
                                 <p class="ml-3"> Add Survey</p>
+                            </Link>
+                        </div>
+
+                        <div class="w-[100%] h-[50px] mb-2 mt-2 text-white hover:bg-[#2980b9] flex flex-col items-center justify-center">
+                            <Link to="/results" class="flex flex-row w-[90%] ml-auto mr-auto">
+                                <CollectionIcon class="h-5 font-thin" />
+                                <p class="ml-3"> Browser Results</p>
                             </Link>
                         </div>
 

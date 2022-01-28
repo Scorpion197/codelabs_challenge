@@ -1,5 +1,5 @@
 
-import { HomeIcon, AdjustmentsIcon, ViewGridAddIcon } from '@heroicons/react/outline';
+import { HomeIcon, AdjustmentsIcon, ViewGridAddIcon, CollectionIcon } from '@heroicons/react/outline';
 
 import { Link } from 'react-router-dom';
 
@@ -18,7 +18,7 @@ const SideBar = () => {
 
                 <Link to="/" class=" mb-10 flex flex-row mb-10 ">
                     <img src={logo} class="w-12" /> 
-                    <p class="ml-5 mt-3 font-semibold text-[1.5rem] sg:text-[1.1rem] text-white">Dashboard</p>
+                    <p class="ml-5 mt-3 font-semibold text-[1.5rem] sl:text-[1rem] sg:text-[1.1rem] text-white">Dashboard</p>
                 </Link>
 
             </div>
@@ -44,6 +44,13 @@ const SideBar = () => {
                         <Link to="/add_survey" class="flex flex-row w-[90%] ml-auto mr-auto">
                             <ViewGridAddIcon class="h-5 font-thin" />
                             <p class="ml-3"> Add Survey</p>
+                        </Link>
+                    </div>
+
+                    <div class="w-[100%] h-[50px] mb-2 mt-2 hover:bg-[#2980b9] flex flex-col items-center justify-center">
+                        <Link to="/results" class="flex flex-row w-[90%] ml-auto mr-auto">
+                            <CollectionIcon class="h-5 font-thin" />
+                            <p class="ml-3"> Browse Results</p>
                         </Link>
                     </div>
 

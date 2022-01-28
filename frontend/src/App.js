@@ -11,6 +11,7 @@ import Home from './components/home/Home';
 import TakeSurvey from './components/survey/takesurvey/TakeSurvey';
 import AddSurvey from './components/survey/addsurvey/AddSurvey';
 import MobileMenu from './components/mobilemenu/MobileMenu';
+import SurveyResults from './components/survey/surveyresults/SurveyResults';
 
 import { Provider } from 'react-redux';
 import store from './store/store';
@@ -36,6 +37,10 @@ function App() {
               <AddSurvey />
             </Route>
 
+            <Route path="/results">
+              <SurveyResults />
+            </Route>
+            
           </Switch>
         </Router>
       </div>
