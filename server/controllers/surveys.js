@@ -69,11 +69,10 @@ export const sendSurveyResults = (req, res) => {
 
     try {
 
-        const data = fs.readFileAsync(path.resolve('surveysResult.json'));
+        
+        const data = fs.readFileSync(path.resolve('surveysResult.json'));
         const fileData = JSON.parse(data);
-
         const surveyResults = req.body;
-
         fileData.questions.push(surveyResults);
 
         const newData = JSON.stringify(fileData);
