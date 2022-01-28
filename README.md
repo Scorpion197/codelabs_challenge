@@ -22,6 +22,6 @@ npm run
 
 cd ../server 
 npm install 
-npm install
+npm run
 ```
 
