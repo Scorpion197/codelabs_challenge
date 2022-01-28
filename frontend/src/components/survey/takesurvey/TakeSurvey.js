@@ -6,6 +6,7 @@ import MobileMenu from '../../mobilemenu/MobileMenu';
 import QuestionBox from '../questionbox/QuestionBox';
 
 import API from '../../../api';
+import Pagination from '../../pagination/Pagination';
 
 const TakeSurvey = () => {
 
@@ -17,11 +18,9 @@ const TakeSurvey = () => {
 
     //for pagination
     const [currentPage, setCurrentPage] = useState(1); 
-    const [questionsPerPage, setQuestionsPerPage] = useState(4);
+    const questionsPerPage = 4;
     const indexOfLastQuestion = currentPage * questionsPerPage;
     const indexOfFirstQuestion = indexOfLastQuestion - questionsPerPage;
-    //const currentQuestions = allQuestions[0].slice(indexOfFirstQuestion, indexOfLastQuestion);
-    const [currentQuestions, setCurrentQuestions] = useState([]);
 
 
     
@@ -32,13 +31,6 @@ const TakeSurvey = () => {
 
         else 
             setMobileMenu(false);
-    }
-
-    const updateCurrentQuestions = () => {
-
-        if (typeof allQuestions !== undefined || allQuestions.length > 1)
-
-            setCurrentQuestions(allQuestions.slice(indexOfFirstQuestion, indexOfLastQuestion));
     }
 
 
@@ -81,16 +73,17 @@ const TakeSurvey = () => {
         }
     }
 
+    const paginate = pageNumber => setCurrentPage(pageNumber);
 
     useEffect(() => {
 
         displayMobileMenu(); 
         updateShowQuestions();
         getQuestions();
-        updateCurrentQuestions();
         
     }, [allQuestions]);
 
+    console.log("Current page: ", currentPage);
 
     window.addEventListener('resize', displayMobileMenu);
     
@@ -111,7 +104,7 @@ const TakeSurvey = () => {
 
                                 <p class="sx:text-[1rem] text-[#001529] text-[4vh] ml-[-5%] font-bold">Survey Questions</p>
                                 {
-                                    allQuestions[0].map((question) => (
+                                    allQuestions[0].slice(indexOfFirstQuestion, indexOfLastQuestion).map((question) => (
                                         
                                         <QuestionBox 
                                             questionID={question.questionID}
@@ -119,6 +112,11 @@ const TakeSurvey = () => {
                                         />
                                     ))
                                 }
+                                <Pagination
+                                    allQuestions={allQuestions[0].length}
+                                    questionsPerPage={questionsPerPage}
+                                    paginate={paginate}
+                                />
                                 <button onClick={handleFinishClick} class="w-[15vh] h-[5vh] sx:w-[8vh] sx:text-[10px] sl:font-thin sl:w-[12vh] sl:text-[14px] text-white bg-[#27ae60] rounded-[5px] ml-[-4.6%] font-semibold">
                                     Finish Survey
                                 </button>

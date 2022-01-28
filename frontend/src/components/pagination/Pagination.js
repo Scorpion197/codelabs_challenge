@@ -1,13 +1,25 @@
 
-const Pagination = ({questionsPerPage, allQuestions}) => {
+const Pagination = ({questionsPerPage, allQuestions, paginate}) => {
 
     const pageNumbers = [];
+
+    for (let i = 1; i <= Math.ceil(allQuestions / questionsPerPage); i++)
+        pageNumbers.push(i);
     
     return (
 
-        <div>
+        <nav>
+            <ul>
+                {pageNumbers.map((number) => (
 
-        </div>
+                    <li key={number}>
+                        <a class="cursor-pointer"onClick={() => paginate(number)}>
+                            {number}
+                        </a>
+                    </li>
+                ))}
+            </ul>
+        </nav>
     )
 }
 
