@@ -12,7 +12,8 @@ const TakeSurvey = () => {
     const [showMobileMenu, setMobileMenu] = useState(false);
     const [showQuestions, setShowQuestions] = useState(false);
     const [allQuestions, setAllquestions] = useState([]);
-    const answered = useSelector((state) => state.answeredQuestions);
+    const results = useSelector((state) => state.answeredQuestions);
+    const dispatch = useDispatch();
 
     const displayMobileMenu = () => {
 
@@ -45,6 +46,22 @@ const TakeSurvey = () => {
             console.log("error occured", err);
         }
     }
+
+
+    const handleFinishClick = async (e) => {
+
+        e.preventDefault();
+
+        try {
+
+            const response = await API.sendSurveyResults(results);
+        } catch(err) {
+
+            console.log("Error occured while sending data to backend API");
+        }
+    }
+
+
     useEffect(() => {
 
         displayMobileMenu(); 
@@ -82,6 +99,9 @@ const TakeSurvey = () => {
                                         />
                                     ))
                                 }
+                                <button onClick={handleFinishClick} class="w-[15vh] h-[5vh] sx:w-[8vh] sx:text-[10px] sl:font-thin sl:w-[12vh] sl:text-[14px] text-white bg-[#27ae60] rounded-[5px] ml-[-4.6%] font-semibold">
+                                    Finish Survey
+                                </button>
                             </div>
                         ) : (
 
