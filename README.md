@@ -18,10 +18,10 @@ git clone https://github.com/Scorpion197/codelabs_challenge.git
 cd codelabs_challenge
 cd frontend 
 npm install 
-npm run 
+npm start
 
 cd ../server 
 npm install 
-npm run
+npm start
 ```
 
