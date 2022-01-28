@@ -11,6 +11,7 @@ module.exports = {
 
       'sx': {'max': '648px'},
       'sl': {'min': '648px', 'max': '1024px'},
+      'sg': {'min': '1024px', 'max': '1280px'}
     },
     extend: {
       backgroundImage: {

@@ -18,7 +18,7 @@ const SideBar = () => {
 
                 <Link to="/" class=" mb-10 flex flex-row mb-10 ">
                     <img src={logo} class="w-12" /> 
-                    <p class="ml-5 mt-3 font-semibold text-[1.5rem] sl:text-[1rem] text-white">Dashboard</p>
+                    <p class="ml-5 mt-3 font-semibold text-[1.5rem] sg:text-[1.1rem] text-white">Dashboard</p>
                 </Link>
 
             </div>
