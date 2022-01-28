@@ -15,6 +15,7 @@ const TakeSurvey = () => {
     const results = useSelector((state) => state.answeredQuestions);
     const dispatch = useDispatch();
 
+    
     const displayMobileMenu = () => {
 
         if (window.innerWidth <= 960)
@@ -23,6 +24,7 @@ const TakeSurvey = () => {
         else 
             setMobileMenu(false);
     }
+
 
     const updateShowQuestions = () => {
 
@@ -33,6 +35,7 @@ const TakeSurvey = () => {
         else 
             setShowQuestions(true);
     }
+
 
     const getQuestions = async() => {
 
@@ -55,9 +58,10 @@ const TakeSurvey = () => {
         try {
 
             const response = await API.sendSurveyResults(results);
+            
         } catch(err) {
 
-            console.log("Error occured while sending data to backend API");
+            console.log("Error occured while sending data to backend API" ,err);
         }
     }
 
@@ -70,7 +74,6 @@ const TakeSurvey = () => {
         
     }, [allQuestions]);
 
-    console.log("Answered: ", answered);
 
     window.addEventListener('resize', displayMobileMenu);
     

@@ -18,9 +18,6 @@ const AddSurvey = () => {
     const [question, setQuestion] = useState(''); 
     const dispatch = useDispatch();
     const addedQuestions = useSelector((state) => state.questions);
-    const answered = useSelector((state) => state.answeredQuestions);
-
-    console.log(answered);
 
     const displayMobileMenu = () => {
 
