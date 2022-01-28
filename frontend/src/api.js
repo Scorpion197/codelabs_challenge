@@ -27,6 +27,22 @@ const API = {
 
         const response = await (await fetch(endpoint, request)).json();
         return response;
+    }, 
+
+    sendSurveyResults: async (results) => {
+
+        const endpoint = "http://localhost:9001/surveys/save_results";
+        const request = {
+
+            method: 'GET', 
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(results),
+        }
+
+        const response = await (await fetch(endpoint, request)).json();
+
+        return response;
+
     }
 }
 

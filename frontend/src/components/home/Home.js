@@ -34,7 +34,7 @@ const Home = () => {
 
             <div class="w-[82%] md:w-[100%] h-full pt-[3vh]">
                 <div class="flex flex-col mt-[5vh] justify-center items-center w-[80%] h-full m-auto">
-                    <p class="text-[#020e29] text-[30px] text-extrabold">Welcome to our survey service </p>
+                    <p class="text-[#020e29] text-[30px] font-bold">Welcome to our survey service </p>
                     <img src={welcome} class="w-[60vh] h-[60vh]" />
                 </div>
             </div>

@@ -33,7 +33,7 @@ const QuestionBox = (props) => {
             {
                 emptyQuestion ? (<></>) :
 
-                (<div key={props.questionID} class="flex flex-col w-[100%] bg-[#f1f2f6] pt-[5px] pb-[5px] ml-[-5%] rounded-[8px] h-auto">
+                (<div key={props.questionID} class="flex flex-col mt-[10px] mb-[10px] w-[100%] bg-[#f1f2f6] pt-[5px] pb-[5px] ml-[-5%] rounded-[8px] h-auto">
 
                     <div class="flex flex-row p-[10px] justify-between items-center">
                         <p class="text-[#001529] text-[20px] sx:text-[14px]"> {props.questionContext}</p>

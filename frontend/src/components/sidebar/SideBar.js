@@ -10,8 +10,8 @@ const SideBar = () => {
 
     return (
 
-        <div class="flex flex-col bg-[#001529] h-screen
-        w-[18%]
+        <div class="flex flex-col bg-[#001529] h-screen overflow-hidden
+        w-[18%] 
         ">
             
             <div class="flex flex-col justify-end w-[90%] mx-auto space-x-3 py-2">

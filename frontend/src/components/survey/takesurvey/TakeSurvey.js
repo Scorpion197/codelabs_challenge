@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import SideBar from '../../sidebar/SideBar';
 import MobileMenu from '../../mobilemenu/MobileMenu';
@@ -12,6 +12,7 @@ const TakeSurvey = () => {
     const [showMobileMenu, setMobileMenu] = useState(false);
     const [showQuestions, setShowQuestions] = useState(false);
     const [allQuestions, setAllquestions] = useState([]);
+    const answered = useSelector((state) => state.answeredQuestions);
 
     const displayMobileMenu = () => {
 
@@ -52,7 +53,7 @@ const TakeSurvey = () => {
         
     }, [allQuestions]);
 
-
+    console.log("Answered: ", answered);
 
     window.addEventListener('resize', displayMobileMenu);
     
@@ -71,7 +72,7 @@ const TakeSurvey = () => {
                         showQuestions ? (
                             <div class="flex flex-col w-[100%] h-auto">
 
-                                <p class="sx:text-[1rem] text-[#001529] text-[4vh] ml-[-5%] text-bold">Survey Questions</p>
+                                <p class="sx:text-[1rem] text-[#001529] text-[4vh] ml-[-5%] font-bold">Survey Questions</p>
                                 {
                                     allQuestions[0].map((question) => (
                                         
