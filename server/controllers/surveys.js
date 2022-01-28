@@ -65,7 +65,7 @@ export const sendSurveyQuestions = (req, res) => {
 
 }
 
-export const sendSurveyResults = (req, res) => {
+export const getSurveyResults = (req, res) => {
 
     try {
 
@@ -98,4 +98,28 @@ export const sendSurveyResults = (req, res) => {
         "ACTION": "SAVE RESULTS",
         "STATUS": "SUCCESS"
     })
+}
+
+export const exposeSurveyResults = (req, res) => {
+
+    try {
+
+        const rawData = fs.readFileSync(path.resolve('surveysResult.json'));
+        const parsedData = JSON.parse(rawData);
+
+        res.send({
+
+            "STATUS": "SUCCESS", 
+            "data": parsedData
+        })
+
+    }catch(err) {
+
+        console.log("Error occured while exposing survey results: ", err);
+        
+        res.send({
+
+            "STATUS": "FAILED",
+        })
+    }
 }
