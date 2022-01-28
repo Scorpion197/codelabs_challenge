@@ -54,7 +54,7 @@ const SurveyResults = () => {
     }
 
     const paginate = pageNumber => setCurrentPage(pageNumber);
-    console.log("results", results);
+
     useEffect(() => {
 
         displayMobileMenu();
@@ -94,7 +94,7 @@ const SurveyResults = () => {
                                 }
                                 
                                 <Pagination 
-                                    allQuestions={results.length}
+                                    allQuestions={results[0].length}
                                     questionsPerPage={answersPerPage}
                                     paginate={paginate}
                                 />
@@ -102,7 +102,7 @@ const SurveyResults = () => {
                             </div>
                            )  
                            
-                           :(<h1> No availbale results </h1>) 
+                           :(<p class="font-bold text-[25px]"> No availbale results </p>) 
                         }
 
                     </div>

@@ -122,7 +122,7 @@ const TakeSurvey = () => {
                             </div>
                         ) : (
 
-                            <h1> NO available surveys</h1>
+                            <p class="font-bold text-[25px]"> No available surveys</p>
                         )
                     }
 
